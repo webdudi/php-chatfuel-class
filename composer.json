@@ -1,5 +1,5 @@
 {
-  "name": "filip_mihal/php-chatfuel-class",
+  "name": "filip_mihal/nette-chatfuel",
   "description": "A PHP class to generate JSON output for your chatbot (build with Chatfuel)",
   "homepage": "https://github.com/J2TeaM/php-chatfuel-class",
   "keywords": ["chatbot", "chatfuel", "messenger bot", "facebook bot", "json api"],
