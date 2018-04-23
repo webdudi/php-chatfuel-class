@@ -1,10 +1,7 @@
 <?php
-/**
- * Copyright 2017 Juno_okyo <junookyo@gmail.com>
- *
- * Website: https://junookyo.blogspot.com/
- */
-namespace juno_okyo;
+
+namespace filip_mihal;
+
 
 class Chatfuel
 {
@@ -21,16 +18,9 @@ class Chatfuel
 
   public function __destruct()
   {
-    if (count($this->response) > 0) {
-      try {
-        header('Content-Type: application/json');
-        echo json_encode(array('messages' => $this->response));
-        exit;
-      } catch (Exception $e) {
-        // noop
-      }
-    }
+        return array('messages' => $this->response);
   }
+
 
   public function sendText($messages = null)
   {

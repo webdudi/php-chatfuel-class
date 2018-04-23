@@ -1,14 +1,13 @@
 {
-  "name": "juno_okyo/php-chatfuel-class",
+  "name": "filip_mihal/php-chatfuel-class",
   "description": "A PHP class to generate JSON output for your chatbot (build with Chatfuel)",
   "homepage": "https://github.com/J2TeaM/php-chatfuel-class",
   "keywords": ["chatbot", "chatfuel", "messenger bot", "facebook bot", "json api"],
   "type": "library",
   "license": "MIT",
   "authors": [{
-    "name": "Manh Tuan",
-    "email": "junookyo@gmail.com",
-    "homepage": "https://junookyo.blogspot.com/",
+    "name": "Filip Mihal",
+    "email": "fifomihal@gmail.com",
     "role": "Developer"
   }],
   "require": {
@@ -16,7 +15,7 @@
   },
   "autoload": {
     "psr-4": {
-      "juno_okyo\\": "src/juno_okyo/"
+      "filip_mihal\\": "src/filip_mihal/"
     }
   }
 }
