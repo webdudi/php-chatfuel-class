@@ -3,7 +3,7 @@
 namespace filip_mihal;
 
 
-class Chatfuel
+class ChatFuel
 {
   const VERSION = '1.0.0';
 
