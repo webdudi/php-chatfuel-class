@@ -1,6 +1,6 @@
 <?php
 
-namespace filip_mihal;
+namespace filipmihal;
 
 
 class ChatFuel

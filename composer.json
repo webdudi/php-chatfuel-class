@@ -1,5 +1,5 @@
 {
-  "name": "filip_mihal/nette-chatfuel",
+  "name": "filipmihal/nette-chatfuel",
   "description": "A PHP class to generate JSON output for your chatbot (build with Chatfuel)",
   "homepage": "https://github.com/J2TeaM/php-chatfuel-class",
   "keywords": ["chatbot", "chatfuel", "messenger bot", "facebook bot", "json api"],
@@ -15,7 +15,7 @@
   },
   "autoload": {
     "psr-4": {
-      "filip_mihal\\": "src/filip_mihal/"
+      "filipmihal\\": "src/filipmihal/"
     }
   }
 }
