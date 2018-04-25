@@ -22,7 +22,7 @@ class Chatfuel
   }
 
 
-  public function sendText($messages = null)
+  public function getText($messages = null)
   {
     if (is_null($messages)) {
       throw new Exception('Invalid input', 1);
@@ -40,37 +40,37 @@ class Chatfuel
     }
   }
 
-  public function sendImage($url)
+  public function getImage($url)
   {
     if ($this->isURL($url)) {
-      $this->sendAttachment('image', array('url' => $url));
+      $this->getAttachment('image', array('url' => $url));
     } else {
-      $this->sendText('Error: Invalid URL!');
+      $this->getText('Error: Invalid URL!');
     }
   }
 
-  public function sendVideo($url)
+  public function getVideo($url)
   {
     if ($this->isURL($url)) {
-      $this->sendAttachment('video', array('url' => $url));
+      $this->getAttachment('video', array('url' => $url));
     } else {
-      $this->sendText('Error: Invalid URL!');
+      $this->getText('Error: Invalid URL!');
     }
   }
 
-  public function sendAudio($url)
+  public function getAudio($url)
   {
     if ($this->isURL($url)) {
-      $this->sendAttachment('audio', array('url' => $url));
+      $this->getAttachment('audio', array('url' => $url));
     } else {
-      $this->sendText('Error: Invalid URL!');
+      $this->getText('Error: Invalid URL!');
     }
   }
 
-  public function sendTextCard($text, $buttons)
+  public function getTextCard($text, $buttons)
   {
     if (is_array($buttons)) {
-      $this->sendAttachment('template', array(
+      $this->getAttachment('template', array(
         'template_type' => 'button',
         'text'          => $text,
         'buttons'       => $buttons
@@ -82,10 +82,10 @@ class Chatfuel
     return FALSE;
   }
 
-  public function sendGallery($elements)
+  public function getGallery($elements)
   {
     if (is_array($elements)) {
-      $this->sendAttachment('template', array(
+      $this->getAttachment('template', array(
         'template_type' => 'generic',
         'elements'      => $elements
       ));
@@ -199,7 +199,7 @@ class Chatfuel
     return $button;
   }
 
-  private function sendAttachment($type, $payload)
+  private function getAttachment($type, $payload)
   {
     $type = strtolower($type);
     $validTypes = array('image', 'video', 'audio', 'template');
