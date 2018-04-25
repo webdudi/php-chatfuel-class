@@ -16,7 +16,7 @@ class ChatFuel
     }
   }
 
-  public function __destruct()
+  public function getResult()
   {
         return array('messages' => $this->response);
   }
