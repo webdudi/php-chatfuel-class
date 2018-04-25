@@ -16,7 +16,7 @@ class ChatFuel
     }
   }
 
-  public function getResult()
+  public function getResult($)
   {
         return array('messages' => $this->response);
   }
@@ -30,53 +30,51 @@ class ChatFuel
 
     $type = gettype($messages);
     if ($type === 'string') {
-      $this->response[] = array('text' => $messages);
+      return array('text' => $messages);
     } elseif ($type === 'array' || is_array($messages)) {
       foreach ($messages as $message) {
-        $this->response[] = array('text' => $message);
+        return array('text' => $message);
       }
     } else {
-      $this->response[] = array('text' => 'Error!');
+      return array('text' => 'Error!');
     }
   }
 
   public function getImage($url)
   {
     if ($this->isURL($url)) {
-      $this->getAttachment('image', array('url' => $url));
+      return $this->getAttachment('image', array('url' => $url));
     } else {
-      $this->getText('Error: Invalid URL!');
+     return $this->getText('Error: Invalid URL!');
     }
   }
 
   public function getVideo($url)
   {
     if ($this->isURL($url)) {
-      $this->getAttachment('video', array('url' => $url));
+     return $this->getAttachment('video', array('url' => $url));
     } else {
-      $this->getText('Error: Invalid URL!');
+      return $this->getText('Error: Invalid URL!');
     }
   }
 
   public function getAudio($url)
   {
     if ($this->isURL($url)) {
-      $this->getAttachment('audio', array('url' => $url));
+      return $this->getAttachment('audio', array('url' => $url));
     } else {
-      $this->getText('Error: Invalid URL!');
+      return $this->getText('Error: Invalid URL!');
     }
   }
 
   public function getTextCard($text, $buttons)
   {
     if (is_array($buttons)) {
-      $this->getAttachment('template', array(
+      return $this->getAttachment('template', array(
         'template_type' => 'button',
         'text'          => $text,
         'buttons'       => $buttons
       ));
-
-      return TRUE;
     }
 
     return FALSE;
@@ -85,12 +83,10 @@ class ChatFuel
   public function getGallery($elements)
   {
     if (is_array($elements)) {
-      $this->getAttachment('template', array(
+      return $this->getAttachment('template', array(
         'template_type' => 'generic',
         'elements'      => $elements
       ));
-
-      return TRUE;
     }
 
     return FALSE;
@@ -177,9 +173,7 @@ class ChatFuel
   public function createQuickReply($text, $quickReplies)
   {
     if (is_array($quickReplies)) {
-      $this->response['text'] = $text;
-      $this->response['quick_replies'] = $quickReplies;
-      return TRUE;
+      return array('text' => $text, 'quick_replies' => $quickReplies);
     }
 
     return FALSE;
@@ -212,7 +206,7 @@ class ChatFuel
         )
       );
     } else {
-      $this->response[] = array('text' => 'Error: Invalid type!');
+      return array('text' => 'Error: Invalid type!');
     }
   }
 
