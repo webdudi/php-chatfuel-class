@@ -7,8 +7,6 @@ class ChatFuel
 {
   const VERSION = '1.0.0';
 
-  protected $response = array();
-
   public function __construct($debug = FALSE)
   {
     if (( ! $debug) && ( ! isset($_SERVER['HTTP_USER_AGENT']) OR strpos($_SERVER['HTTP_USER_AGENT'], 'Apache-HttpAsyncClient') === FALSE)) {
@@ -94,7 +92,7 @@ class ChatFuel
 
   public function createElement($title, $image, $subTitle, $buttons)
   {
-    if ($this->isURL($image) && is_array($buttons)) {
+    if (is_array($buttons)) {
       return array(
         'title'     => $title,
         'image_url' => $image,
@@ -127,7 +125,6 @@ class ChatFuel
 
   public function createButtonToURL($title, $url, $setAttributes = NULL)
   {
-    if ($this->isURL($url)) {
       $button = array();
       $button['type'] = 'web_url';
       $button['url'] = $url;
@@ -138,9 +135,7 @@ class ChatFuel
       }
 
       return $button;
-    }
-
-    return FALSE;
+    
   }
 
   public function createPostBackButton($title, $url)
@@ -199,7 +194,7 @@ class ChatFuel
     $validTypes = array('image', 'video', 'audio', 'template');
 
     if (in_array($type, $validTypes)) {
-      $this->response[] = array(
+      return array(
         'attachment' => array(
           'type'    => $type,
           'payload' => $payload
