@@ -16,7 +16,7 @@ class ChatFuel
 
   public function getResult($messages)
   {
-        return array('messages' => $messages);
+    return array('messages' => $messages);
   }
 
 
