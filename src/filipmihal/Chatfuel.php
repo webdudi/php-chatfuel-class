@@ -5,7 +5,6 @@ namespace filipmihal;
 
 class ChatFuel
 {
-  const VERSION = '1.0.0';
 
   public function __construct($debug = FALSE)
   {
